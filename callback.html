@@ -4,7 +4,8 @@
 <style>body{font-family:system-ui,sans-serif;max-width:680px;margin:3em auto;padding:0 1em;line-height:1.6}code{word-break:break-all}</style></head>
 <body>
 <h1>Authorization received</h1>
-<p>Copy the full address of this page (the URL in the address bar) and paste it into the Mortwick Publisher setup.</p>
+<p>The authorization code was sent to the Mortwick Publisher tool running on this computer. You can close this page.</p>
 <p>Code: <code id="c"></code></p>
-<script>document.getElementById("c").textContent=new URLSearchParams(location.search).get("code")||"(none)";</script>
+<script>var k=new URLSearchParams(location.search).get("code");document.getElementById("c").textContent=k||"(none)";
+if(k)fetch("http://127.0.0.1:8765/?code="+encodeURIComponent(k),{mode:"no-cors"}).catch(function(){});</script>
 </body></html>
