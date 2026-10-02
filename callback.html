@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Mortwick Publisher - authorization</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:system-ui,sans-serif;max-width:680px;margin:3em auto;padding:0 1em;line-height:1.6}code{word-break:break-all}</style></head>
+<body>
+<h1>Authorization received</h1>
+<p>Copy the full address of this page (the URL in the address bar) and paste it into the Mortwick Publisher setup.</p>
+<p>Code: <code id="c"></code></p>
+<script>document.getElementById("c").textContent=new URLSearchParams(location.search).get("code")||"(none)";</script>
+</body></html>
